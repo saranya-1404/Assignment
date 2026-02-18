@@ -1,2 +1,24 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+
+#Part A: House Hunting
+#input values
+annual_salary = float(input("Enter your annual salary: "))
+portion_saved = float(input("Enter the percent of your salary to save, as a decimal: "))
+costofdh = float(input("Enter the cost of your dream home: "))
+
+# given values in the question
+portion_down_payment = 0.25
+annual_return = 0.04
+
+# initial values and their operation
+initialsavings = 0
+monthly_salary = annual_salary / 12
+monthly_return = annual_return / 12
+down_payment = costofdh * portion_down_payment
+months = 0
+
+while current_savings < down_payment:
+    current_savings += current_savings * monthly_return
+    current_savings += monthly_salary * portion_saved
+    months += 1
+
+print("Number of months:", months)
